@@ -17,15 +17,12 @@ def quick(array:list):
 
     if(len(array[:orange])>1):
         print(f"[:o] {array[:orange]}")
-        quick(array[:orange])
+        array[:orange] = quick(array[:orange])
 
     if(len(array[orange+1:])>1):
         print(f"[o+1:] {array[orange+1:]}")
-        quick(array[orange+1:])
-
-
-
+        array[orange+1:] = quick(array[orange+1:])
+    return array
 
 quick(random_numbers)
 print(random_numbers)
-# print(quick(random_numbers))
